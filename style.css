@@ -1,8 +1,11 @@
 :root {
     --link-color: #402535;
     --font: 'Montserrat', sans-serif;
-    --header-color: #F3F7F2;
-    --hover-color: #323B33;
+    /* --header-color: #F3F7F2; */
+    --header-color: #EFF5ED;
+    --hover-color: #6D826C;
+    /* --background-color: #F7FCF8; */
+    --background-color: #FCFCF7;
 }
 
 body {
@@ -11,17 +14,22 @@ body {
     font-family: var(--font);
     text-align: center;
     box-sizing: border-box;
+    background-color: var(--background-color);
 }
 
 header {
     position: fixed;
     width: 100%;
-    height: 170px;
     background-color: var(--header-color);
     padding: 0.6rem 10% 0.8rem 10%;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+}
+
+.logo {
+    height: 100px;
+    width: auto;
 }
 
 ul {
@@ -46,16 +54,18 @@ a {
 .navlink a::after {
     position: absolute;
     content: "";
-    width: 0px;
+    width: 100%;
     height: 2px;
     display: block;
     background-color: var(--link-color);
     transition: all 300ms ease;
-
+    transform: scaleX(0);
+    transform-origin: bottom center;
 } 
 
 .navlink a:hover::after {
-    width: 100%;
+    transform: scaleX(1);
+    transform-origin: bottom center;
 }
 
 #contato a {
@@ -63,6 +73,10 @@ a {
     padding: 8px;
     background-color: var(--link-color);
     color: var(--header-color);
+    transition: all 300ms ease;
+}
+#contato a:hover {
+    background-color: var(--hover-color);
 }
 
 nav {
@@ -70,8 +84,7 @@ nav {
 }
 
 main {
-    padding: 170px 0 0 0;
-
+    padding: 120px 0 0 0;
 }
 .main-image {
     position: relative;
@@ -92,14 +105,11 @@ main {
     position: absolute;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.6);
-    
-    /* opacity: 0.6; */
-    color: white;
+    color: var(--background-color);
     top: 50%;
     transform: translateY(-50%);
     padding: 1rem 0 0 0; 
     font-size: 1.6rem;
-    /* text-align: center; */
 }
 
 .card-heading {
