@@ -8,6 +8,7 @@
     --background-color: #FCFCF7;
 }
 
+
 body {
     margin: 0;
     padding: 0;
@@ -20,7 +21,14 @@ body {
 header {
     position: fixed;
     width: 100%;
-    background-color: var(--header-color);
+    z-index: 3;
+    /* background-color: var(--header-color); */
+
+    background-color: #DCEBD8;
+    opacity: 1;
+    background-image: linear-gradient(to right, #F7F1F0, #F7F1F0 5px, #DCEBD8 5px, #DCEBD8 );
+    background-size: 10px 100%;
+    
     padding: 0.6rem 10% 0.8rem 10%;
     display: flex;
     justify-content: space-between;
@@ -115,4 +123,70 @@ main {
 .card-heading {
     font-size: 2rem;
     font-weight: 300;
+}
+
+.carrossel {
+    width: 900px;
+    height: 600px;
+    position: relative;
+    margin: auto;
+}
+
+.carrossel > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    z-index: 0;
+    transition: 200ms ease-in-out;
+    transition-delay: 200ms;
+}
+
+.slide[data-ativo] {
+    opacity: 1;
+    transition-delay: 0;
+    z-index: 1;
+}
+
+.slide > img {
+    /* display: block;
+     width: 100%; */
+    height: 100%;
+    /* object-fit: cover;
+    object-position: center; */
+    border-radius: 38px;
+}
+
+.btn-carrossel {
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    border-radius: 8px;
+    font-size: 4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--background-color);
+    opacity: 0.8;
+    padding: 0 .5rem;
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.btn-carrossel:hover,
+.btn-carrossel:focus {
+    color: var(--background-color);
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.btn-carrossel.prev {
+    left: 1rem;
+}
+
+.btn-carrossel.next {
+    right: 1rem;
 }

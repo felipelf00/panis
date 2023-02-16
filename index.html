@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panis Padaria Artesanal</title>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css"></style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
@@ -31,6 +32,32 @@
         </div>
         <h1>Vem conhecer a gente</h1>
         <p>A gente faz uns pão gostoso da porra e blablablabla saca só:</p>
+        <section aria-label="Fotos">
+            <div class="carrossel" data-carrossel>
+                <button class="btn-carrossel next" data-carrossel-btn="next">&#62</button>
+                <button class="btn-carrossel prev" data-carrossel-btn="prev">&#60</button>
+                <ul data-slides>
+                    <li class="slide" data-ativo>
+                        <img src="imagens/pão-inteiro.jpg" alt="Pão">
+                    </li>
+                    <li class="slide">
+                        <img src="imagens/focaccia.jpg" alt="Pão">
+                    </li>
+                    <li class="slide">
+                        <img src="imagens/cookie2.jpg" alt="Pão">
+                    </li>
+                    <li class="slide">
+                        <img src="imagens/pão-cortado.jpg" alt="Pão">
+                    </li>
+                    <li class="slide">
+                        <img src="imagens/pão-choco.jpg" alt="Pão">
+                    </li>
+                    <li class="slide">
+                        <img src="imagens/modelados.jpg" alt="Pão">
+                    </li>
+                </ul>
+            </div>
+        </section>
     </main>
 </body>
 </html>
