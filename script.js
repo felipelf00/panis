@@ -1,7 +1,29 @@
+let myInterval = setInterval( () => {
+    const autoNext = document.querySelector('[data-carrossel-btn="next"');
+    autoNext.click();
+}, 3000);
+
+// function autoClick(button) {
+//     button.click();
+// };
+
+// const autoNext = document.querySelector('[data-carrossel-btn="next"');
+
+// autoClick(autoNext);
+
+
+myInterval;
+
 const buttons = document.querySelectorAll("[data-carrossel-btn");
 
 buttons.forEach(button => {
     button.addEventListener("click", () => {
+        clearInterval(myInterval);
+        myInterval = setInterval( () => {
+            const autoNext = document.querySelector('[data-carrossel-btn="next"');
+            autoNext.click();
+        }, 3000);
+        myInterval;
         const offset = button.dataset.carrosselBtn === "next" ? 1: -1;
         const slides = button.closest("[data-carrossel").querySelector("[data-slides]");
         const activeSlide = slides.querySelector("[data-ativo]");
@@ -13,9 +35,3 @@ buttons.forEach(button => {
         delete activeSlide.dataset.ativo;
     })
 })
-
-setInterval( () => {
-    const autoNext = document.querySelector('[data-carrossel-btn="next"');
-    autoNext.click();
-}, 5000)
-

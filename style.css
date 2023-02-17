@@ -38,6 +38,7 @@ header {
 .logo {
     height: 100px;
     width: auto;
+    /* filter: drop-shadow(0px 0px 0px 23px var(--header-color)); */
 }
 
 ul {
@@ -45,7 +46,8 @@ ul {
     margin: 0;
     padding-bottom: 0.2rem;
     display: flex;
-    gap: 24px;  
+    gap: 24px;
+    text-shadow: 0px 0px 1px var(--hover-color);
 }
 
 a {
@@ -69,6 +71,7 @@ a {
     transition: all 300ms ease;
     transform: scaleX(0);
     transform-origin: bottom center;
+    box-shadow: 0px 0px 2px var(--hover-color);
 } 
 
 .navlink a:hover::after {
@@ -80,7 +83,7 @@ a {
     border-radius: 8px;
     padding: 8px;
     background-color: var(--link-color);
-    color: var(--header-color);
+    color: var(--background-color);
     transition: all 300ms ease;
 }
 #contato a:hover {
@@ -93,6 +96,8 @@ nav {
 
 main {
     padding: 120px 0 0 0;
+    width: 80vw;
+    margin: auto;
 }
 .main-image {
     position: relative;
@@ -125,11 +130,19 @@ main {
     font-weight: 300;
 }
 
+h1 {
+    font-weight: 900;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
 .carrossel {
     width: 900px;
     height: 600px;
     position: relative;
-    margin: auto;
+    margin: 40px auto;
 }
 
 .carrossel > ul {
