@@ -36,9 +36,9 @@ header {
 }
 
 .logo {
-    height: 100px;
+    height: calc(30px + 5vw);
+    max-height: 100px;
     width: auto;
-    /* filter: drop-shadow(0px 0px 0px 23px var(--header-color)); */
 }
 
 ul {
@@ -46,14 +46,15 @@ ul {
     margin: 0;
     padding-bottom: 0.2rem;
     display: flex;
-    gap: 24px;
+    gap: max(min(24px, 1.5vw), 10px);
     text-shadow: 0px 0px 1px var(--hover-color);
 }
 
 a {
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: max(min(1.2rem, 2vw), 0.8rem);
+    white-space: nowrap;
 }
 
 .navlink a {
