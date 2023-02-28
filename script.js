@@ -3,15 +3,6 @@ let myInterval = setInterval( () => {
     autoNext.click();
 }, 3000);
 
-// function autoClick(button) {
-//     button.click();
-// };
-
-// const autoNext = document.querySelector('[data-carrossel-btn="next"');
-
-// autoClick(autoNext);
-
-
 myInterval;
 
 const buttons = document.querySelectorAll("[data-carrossel-btn");

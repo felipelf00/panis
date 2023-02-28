@@ -6,6 +6,7 @@
     --hover-color: #6D826C;
     /* --background-color: #F7FCF8; */
     --background-color: #FCFCF7;
+    --logo-height: 80px;
 }
 
 
@@ -20,25 +21,30 @@ body {
 
 header {
     position: fixed;
-    width: 100%;
+    /* width: 100%; */
     z-index: 3;
     /* background-color: var(--header-color); */
 
-    background-color: #DCEBD8;
-    opacity: 1;
+    /* background-color: #DCEBD8; */
+    /* opacity: 1; */
     background-image: linear-gradient(to right, #F7F1F0, #F7F1F0 5px, #DCEBD8 5px, #DCEBD8 );
     background-size: 10px 100%;
     
-    padding: 0.6rem 10% 0.8rem 10%;
+    padding: 10px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-end;
 }
 
 .logo {
-    height: calc(30px + 5vw);
-    max-height: 100px;
-    width: auto;
+
+    width: 100%;
+}
+
+.logo img {
+    height: var(--logo-height);
+    margin: auto;
 }
 
 ul {
@@ -53,7 +59,7 @@ ul {
 a {
     text-decoration: none;
     font-weight: 600;
-    font-size: max(min(1.2rem, 2vw), 0.8rem);
+    font-size: 1rem;
     white-space: nowrap;
 }
 
@@ -96,18 +102,19 @@ nav {
 }
 
 main {
-    padding: 120px 0 0 0;
-    width: 80vw;
-    margin: auto;
+    padding-top: calc(20px + var(--logo-height));
+    /* width: 80vw; */
+    /* margin: auto; */
 }
 .main-image {
     position: relative;
     display: flex;
     justify-content: center;
     text-align: center;
-    width: 80vw;
-    max-width: 100%;
+    width: 100%;
+    /* max-width: 100%; */
     margin: 0 auto 4rem auto;
+
     z-index: -1;
 }
 
@@ -123,11 +130,11 @@ main {
     top: 50%;
     transform: translateY(-50%);
     padding: 1rem 0 0 0; 
-    font-size: 1.6rem;
+    /* font-size: 1.6rem; */
 }
 
 .card-heading {
-    font-size: 2rem;
+    font-size: 1.2rem;
     font-weight: 300;
 }
 
@@ -135,13 +142,11 @@ h1 {
     font-weight: 900;
 }
 
-p {
-    font-size: 1.2rem;
-}
-
 .carrossel {
-    width: 900px;
-    height: 600px;
+    /* width: 900px;
+    height: 600px; */
+    width: 90vw;
+    height: 60vw;
     position: relative;
     margin: 40px auto;
 }
