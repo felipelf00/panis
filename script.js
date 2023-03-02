@@ -25,4 +25,13 @@ buttons.forEach(button => {
         slides.children[newIndex].dataset.ativo = true;
         delete activeSlide.dataset.ativo;
     })
-})
+});
+
+function toggleMenu() {
+    const nav = document.querySelector(".navigation");
+    if (nav.style.display === "none") {
+        nav.style.display = "block";
+    } else {
+        nav.style.display = "none"
+    };
+}
