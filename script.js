@@ -29,9 +29,13 @@ buttons.forEach(button => {
 
 function toggleMenu() {
     const nav = document.querySelector(".navigation");
+    const header = document.querySelector("header");
     if (nav.style.display === "none") {
         nav.style.display = "block";
+        header.style.maxHeight = "none";
+        console.log(header);
     } else {
-        nav.style.display = "none"
+        nav.style.display = "none";
+        header.style.maxHeight = "124px";
     };
 }

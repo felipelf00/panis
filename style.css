@@ -7,6 +7,7 @@
     /* --background-color: #F7FCF8; */
     --background-color: #FCFCF7;
     --logo-height: 80px;
+    --text-color: #1b1619;
 }
 
 
@@ -17,11 +18,13 @@ body {
     text-align: center;
     box-sizing: border-box;
     background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 header {
     position: fixed;
     width: 100%;
+    max-height: 124px;
     z-index: 3;
     background-image: linear-gradient(to right, #F7F1F0, #F7F1F0 5px, #DCEBD8 5px, #DCEBD8 );
     background-size: 10px 100%;
@@ -45,22 +48,23 @@ header {
     text-shadow: 0px 0px 1px var(--hover-color);
     width: 100%;
     cursor: pointer;
+    background-color: rgba(0, 0, 0, .1);
 }
 
 #burger:hover {
     color: var(--hover-color);
-    background-color: rgba(0, 0, 0, .1);
+    background-color: rgba(0, 0, 0, .2);
 }
 
 
-#contato {
-    border-radius: 8px;
-    padding: 6px;
+.btn {
+    border-radius: 16px;
+    padding: 8px;
     background-color: var(--link-color);
     color: var(--background-color);
     transition: all 300ms ease;
 }
-#contato:hover {
+.btn:hover {
     background-color: var(--hover-color);
 }
 
@@ -75,20 +79,18 @@ nav {
 .navigation ul {
     width: 100%;
     list-style-type: none;
-    margin: 0;  /*0 auto 0 auto;  */
+    margin: 0;  
     padding: 0 0 7px 0;
     display: flex;
     flex-direction: column;
-    /* gap: max(min(24px, 1.5vw), 10px); */
+    gap: 6px;
     text-shadow: 0px 0px 1px var(--hover-color);
 }
-
-
 
 a {
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 1rem;
     white-space: nowrap;
 }
 
@@ -118,47 +120,32 @@ a {
     /* transform: translateX(-50%); */
 }
 
-
-
-main {
-    padding-top: calc(20px + var(--logo-height));
-    /* width: 80vw; */
-    /* margin: auto; */
-}
 .main-image {
     position: relative;
     display: flex;
     justify-content: center;
     text-align: center;
     width: 100%;
-    /* max-width: 100%; */
-    margin: 0 auto 4rem auto;
-
+    margin: 0 auto 20px auto;
     z-index: -1;
+    padding-top: calc(20px + var(--logo-height));
 }
 
 .main-image img {
     width: 100%;
 }
 
-.card {
-    position: absolute;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: var(--background-color);
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 1rem 0 0 0; 
-    /* font-size: 1.6rem; */
-}
-
-.card-heading {
-    font-size: 1.2rem;
-    font-weight: 300;
-}
-
 h1 {
     font-weight: 900;
+    font-size: 28px;
+}
+
+.bem-vindo {
+    padding-bottom: 24px;
+}
+
+.bem-vindo p {
+    padding-bottom: 12px;
 }
 
 .carrossel {
