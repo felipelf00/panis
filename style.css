@@ -142,6 +142,7 @@ h1 {
 
 .bem-vindo {
     padding-bottom: 24px;
+    margin: 0 12px 0 12px;
 }
 
 .bem-vindo p {
@@ -161,6 +162,10 @@ h1 {
     margin: 0;
     padding: 0;
     list-style: none;
+}
+
+.fotos p {
+    margin: 0 10px 0 10px;
 }
 
 .slide {
@@ -210,4 +215,17 @@ h1 {
 
 .btn-carrossel.next {
     right: 1rem;
+}
+
+.mapa {
+    margin: 20px auto;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--link-color);
+    color: var(--background-color);
+    padding-bottom: 20px;
+}
+
+.mapa p {
+    padding: 0 10px;
 }
