@@ -9,6 +9,7 @@
     --logo-height: 80px;
     --text-color: #1b1619;
     scroll-padding: 124px;
+    scroll-behavior: smooth;
 }
 
 
@@ -59,12 +60,13 @@ header {
 
 
 .btn {
-    border-radius: 16px;
-    padding: 8px;
+    border-radius: 21px;
+    padding: 12px;
     background-color: var(--link-color);
     color: var(--background-color);
     transition: all 300ms ease;
 }
+
 .btn:hover {
     background-color: var(--hover-color);
 }
@@ -243,7 +245,7 @@ h1 {
 .contato ul {
     margin: auto;
     padding: 0;
-    padding-bottom: 30px;
+    padding-bottom: 16px;
 }
 
 .contato ul li {
@@ -256,4 +258,14 @@ h1 {
 .icon {
     max-height: 40px;
     padding-left: 10px;
+}
+
+.contato .alt {
+    background-color: var(--header-color);
+    color: var(--link-color);
+}
+
+.contato .alt:hover {
+    background-color: var(--hover-color);
+    color: var(--background-color);
 }
