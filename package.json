@@ -2,7 +2,7 @@
   "name": "panis",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "private": true,
   "dependencies": {
     "acorn": "^8.8.2",
     "acorn-import-assertions": "^1.8.0",
