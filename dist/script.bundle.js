@@ -1,0 +1,1 @@
+(()=>{"use strict";setInterval((()=>{document.querySelector('[data-carrossel-btn="next"').click()}),3e3)})();

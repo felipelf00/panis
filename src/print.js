@@ -8,13 +8,12 @@ import paoChoco from "./imagens/pão-choco.jpg";
 import modelados from "./imagens/modelados.jpg";
 import zapIcon from "./imagens/icons8-whatsapp-48.svg";
 import instaIcon from "./imagens/instagram-48.svg";
+import { toggleMenu } from "./script.js";
 
 function createHeader() {
   const header = document.createElement("header");
   const headerRow = document.createElement("div");
   headerRow.classList.add("header-row");
-  // header.appendChild(headerRow);
-  // const logo = document.createElement("img");
   const myLogo = new Image();
   myLogo.src = logo;
   myLogo.alt = "logo";
@@ -27,7 +26,7 @@ function createHeader() {
   const burger = document.createElement("span");
   burger.classList.add("material-symbols-outlined");
   burger.id = "burger";
-  // burger.onclick = toggleMenu();
+  burger.onclick = toggleMenu;
   burger.textContent = "menu";
   headerRow.appendChild(myLogo);
   headerRow.appendChild(contato);
@@ -45,12 +44,15 @@ function createNav() {
   //adicionar lógica aos botões
   const principal = document.createElement("li");
   principal.classList.add("navlink");
+  principal.textContent = "Página Principal";
 
   const produtos = document.createElement("li");
   produtos.classList.add("navlink");
+  produtos.textContent = "Produtos";
 
   const sobre = document.createElement("li");
   sobre.classList.add("navlink");
+  sobre.textContent = "Sobre nós";
 
   lista.appendChild(principal);
   lista.appendChild(produtos);
@@ -59,6 +61,19 @@ function createNav() {
 
   return nav;
 }
+
+// function toggleMenu() {
+//   const nav = document.querySelector(".navigation");
+//   const header = document.querySelector("header");
+//   if (nav.style.display === "none") {
+//     nav.style.display = "block";
+//     header.style.maxHeight = "none";
+//     console.log(header);
+//   } else {
+//     nav.style.display = "none";
+//     header.style.maxHeight = "124px";
+//   }
+// }
 
 function createMain() {
   const container = document.createElement("div");

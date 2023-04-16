@@ -4,6 +4,7 @@ module.exports = {
   entry: {
     index: "./src/index.js",
     print: "./src/print.js",
+    script: "./src/script.js",
   },
   output: {
     filename: "[name].bundle.js",

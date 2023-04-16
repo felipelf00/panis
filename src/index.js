@@ -1,7 +1,7 @@
 import load from "./print";
-// import printMe from "./print.js";
+import { myInterval, createSlider, toggleMenu } from "./script.js";
 import "./style.css";
 
 load();
-
-// printMe();
+// myInterval;
+// createSlider();
