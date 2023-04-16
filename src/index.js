@@ -4,4 +4,4 @@ import "./style.css";
 
 load();
 // myInterval;
-// createSlider();
+createSlider();
