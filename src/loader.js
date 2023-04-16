@@ -1,36 +1,3 @@
-/*
-function createHeader() {
-  const header = document.createElement("header");
-
-  const headerRow = document.createElement("div");
-  headerRow.classList.add("header-row");
-  header.appendChild(headerRow);
-
-  const logo = document.createElement("img");
-  logo.alt = "logo";
-
-  const contato = document.createElement("a");
-  contato.classList.add("btn");
-  contato.id = "btn-contato";
-  contato.href = "#contato";
-  contato.textContent = "Contato";
-
-  const burger = document.createElement("span");
-  burger.classList.add("material-symbols-outlined");
-  burger.id = "burger";
-  //   burger.onclick = toggleMenu();
-  burger.textContent = "menu";
-
-  headerRow.appendChild(logo);
-  headerRow.appendChild(contato);
-  header.appendChild(headerRow);
-  header.appendChild(createNav());
-  header.appendChild(burger);
-
-  return header;
-}
-*/
-
 function createNav() {
   const nav = document.createElement("nav");
   nav.classList.add("navigation");
@@ -141,40 +108,9 @@ function createMain() {
   container.appendChild(mainImageContainer);
   container.appendChild(bemVindo);
   container.appendChild(fotos);
+
+  return container;
 }
-
-/*
-function createFooter() {
-  const footer = document.createElement("section");
-  footer.classList.add("contato");
-  // footer.id = "contato";
-
-  const titulo1 = document.createElement("h2");
-  titulo1.textContent = "Contato";
-
-  const para1 = document.createElement("p");
-  para1.textContent =
-    "Você pode entrar em contato com a gente de diferentes formas:";
-
-  const lista = document.createElement("ul");
-
-  const tel = document.createElement("li");
-  const link1 = document.createElement("a");
-  link1.href = "https://wa.me/554130456061";
-  link1.target = "_blank";
-  link1.textContent = "41 3045-6061";
-  const zap = document.createElement("img");
-  zap.classList.add("icon");
-  zap.src = "imagens/icons8-whatsapp-48.svg";
-  zap.alt = "whatsapp";
-  link1.appendChild(zap);
-  tel.appendChild(link1);
-
-  // INCOMPLETO
-
-  return footer;
-}
-*/
 
 function loadMain() {
   const main = document.getElementsByTagName("main");
