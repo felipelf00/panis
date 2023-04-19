@@ -168,7 +168,7 @@ function createFooter() {
   const lista = document.createElement("ul");
 
   const tel = document.createElement("li");
-  tel.textContent = "Telefone:&nbsp";
+  tel.textContent = "Telefone:" + String.fromCharCode(160);
   const link1 = document.createElement("a");
   link1.href = "https://wa.me/554130456061";
   link1.target = "_blank";
@@ -181,7 +181,7 @@ function createFooter() {
   tel.appendChild(link1);
 
   const insta = document.createElement("li");
-  insta.textContent = "Instagram:&nbsp";
+  insta.textContent = "Instagram:" + String.fromCharCode(160);
   const link2 = document.createElement("a");
   link2.href = "https://www.instagram.com/panispaozinho/";
   link2.target = "_blank";
@@ -194,7 +194,7 @@ function createFooter() {
   insta.appendChild(link2);
 
   const email = document.createElement("li");
-  email.textContent = "E-mail:&nbsp";
+  email.textContent = "E-mail:" + String.fromCharCode(160);
   const link3 = document.createElement("a");
   link3.href = "panispadaria@gmail.com";
   link3.textContent = "panispadaria@gmail.com";
