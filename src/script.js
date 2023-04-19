@@ -31,17 +31,29 @@ function createSlider() {
   });
 }
 
-// createSlider();
+// function toggleMenu() {
+//   const nav = document.querySelector(".navigation");
+//   const header = document.querySelector("header");
+//   if (getComputedStyle(nav).display === "none") {
+//     nav.style.display = "block";
+//     header.style.maxHeight = "none";
+//   } else {
+//     nav.style.display = "none";
+//     header.style.maxHeight = "124px";
+//   }
+// }
 
 function toggleMenu() {
   const nav = document.querySelector(".navigation");
   const header = document.querySelector("header");
-  if (nav.style.display === "none") {
-    nav.style.display = "block";
-    header.style.maxHeight = "none";
+  if (nav.classList.contains("navigation--visible")) {
+    nav.classList.remove("navigation--visible");
+    // header.style.maxHeight = "124px";
+    header.classList.remove("header-expanded");
   } else {
-    nav.style.display = "none";
-    header.style.maxHeight = "124px";
+    nav.classList.add("navigation--visible");
+    // header.style.maxHeight = "none";
+    header.classList.add("header--expanded");
   }
 }
 

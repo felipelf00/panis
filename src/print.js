@@ -12,6 +12,7 @@ import { toggleMenu } from "./script.js";
 
 function createHeader() {
   const header = document.createElement("header");
+  header.classList.add("header");
   const headerRow = document.createElement("div");
   headerRow.classList.add("header-row");
   const myLogo = new Image();
@@ -41,9 +42,9 @@ function createNav() {
   nav.classList.add("navigation");
   const lista = document.createElement("ul");
 
-  //adicionar lógica aos botões
   const principal = document.createElement("li");
   principal.classList.add("navlink");
+
   principal.textContent = "Página Principal";
 
   const produtos = document.createElement("li");
@@ -61,19 +62,6 @@ function createNav() {
 
   return nav;
 }
-
-// function toggleMenu() {
-//   const nav = document.querySelector(".navigation");
-//   const header = document.querySelector("header");
-//   if (nav.style.display === "none") {
-//     nav.style.display = "block";
-//     header.style.maxHeight = "none";
-//     console.log(header);
-//   } else {
-//     nav.style.display = "none";
-//     header.style.maxHeight = "124px";
-//   }
-// }
 
 function createMain() {
   const container = document.createElement("div");
@@ -119,11 +107,11 @@ function createMain() {
   const nextBtn = document.createElement("button");
   nextBtn.classList.add("btn-carrossel", "next");
   nextBtn.dataset.carrosselBtn = "next";
-  nextBtn.textContent = "&#62";
+  nextBtn.textContent = ">";
   const prevBtn = document.createElement("button");
   prevBtn.classList.add("btn-carrossel", "prev");
   prevBtn.dataset.carrosselBtn = "prev";
-  prevBtn.textContent = "&#60";
+  prevBtn.textContent = "<";
 
   const lista = document.createElement("ul");
   lista.dataset.slides = "";
