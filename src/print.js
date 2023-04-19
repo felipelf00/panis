@@ -12,7 +12,6 @@ import { toggleMenu } from "./script.js";
 
 function createHeader() {
   const header = document.createElement("header");
-  header.classList.add("header");
   const headerRow = document.createElement("div");
   headerRow.classList.add("header-row");
   const myLogo = new Image();
@@ -79,7 +78,7 @@ function createMain() {
 
   //Bem-vindo
   const bemVindo = document.createElement("section");
-  bemVindo.classList.add = "bem-vindo";
+  bemVindo.classList.add("bem-vindo");
   const titulo = document.createElement("h1");
   titulo.textContent = "Bem-vindo à Panis";
   const para = document.createElement("p");
@@ -234,6 +233,7 @@ function createFooter() {
   para6.textContent = "Rua Alberto Bolliger, 553 fundos";
 
   const mapa = document.createElement("iframe");
+  mapa.id = "mapa";
   mapa.src =
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.6144309078004!2d-49.260484884877684!3d-25.41771388379416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce5791115fdaf%3A0x2a26677e0e58e555!2sPanis%20-%20Padaria%20Artesanal!5e0!3m2!1spt-BR!2sbr!4v1677958259982!5m2!1spt-BR!2sbr";
   mapa.width = "90%";

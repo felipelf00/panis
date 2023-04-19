@@ -59,12 +59,12 @@ header {
   text-shadow: 0px 0px 1px var(--hover-color);
   width: 100%;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.1);
+  /* background-color: rgba(0, 0, 0, 0.1); */
 }
 
 #burger:hover {
   color: var(--hover-color);
-  background-color: rgba(0, 0, 0, 0.2);
+  /* background-color: rgba(0, 0, 0, 0.2); */
 }
 
 .btn {
@@ -104,23 +104,6 @@ ul {
   flex-direction: column;
   gap: 6px;
   /* text-shadow: 0px 0px 1px var(--hover-color); */
-}
-
-@media only screen and (min-width: 768px) {
-  .navigation {
-    display: block;
-  }
-  .navigation ul {
-    flex-direction: row;
-    justify-content: center;
-    gap: 14px;
-  }
-  #burger {
-    display: none;
-  }
-  header {
-    max-height: none;
-  }
 }
 
 a {
@@ -173,10 +156,8 @@ h1 {
 }
 
 .carrossel {
-  /* width: 900px;
-    height: 600px; */
-  width: 90vw;
-  height: 60vw;
+  max-width: 90%;
+  height: 280px;
   position: relative;
   margin: 40px auto;
 }
@@ -198,6 +179,10 @@ h1 {
   z-index: 0;
   transition: 200ms ease-in-out;
   transition-delay: 200ms;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .slide[data-ativo] {
@@ -207,7 +192,8 @@ h1 {
 }
 
 .slide > img {
-  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
   border-radius: 38px;
 }
 
@@ -285,4 +271,40 @@ h1 {
 .contato .alt:hover {
   background-color: var(--hover-color);
   color: var(--background-color);
+}
+
+#mapa {
+  width: min(90%, 800px);
+}
+
+@media only screen and (min-width: 768px) {
+  .navigation {
+    display: block;
+  }
+  .navigation ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 14px;
+  }
+  #burger {
+    display: none;
+  }
+  header {
+    max-height: none;
+  }
+  .header-row {
+    width: 1200px;
+    margin: auto;
+    padding-bottom: 0px;
+  }
+  .main-container {
+    width: 1200px;
+    margin: auto;
+  }
+  #mapa {
+    height: 450px;
+  }
+  .carrossel {
+    height: 600px;
+  }
 }
