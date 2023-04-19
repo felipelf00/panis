@@ -168,12 +168,11 @@ function createFooter() {
   const lista = document.createElement("ul");
 
   const tel = document.createElement("li");
-  tel.textContent = "Telefone: "; //checar se precisa de &nbsp
+  tel.textContent = "Telefone:&nbsp";
   const link1 = document.createElement("a");
   link1.href = "https://wa.me/554130456061";
   link1.target = "_blank";
   link1.textContent = "41 3045-6061";
-  // const zap = document.createElement("img");
   const myZap = new Image();
   myZap.classList.add("icon");
   myZap.src = zapIcon;
@@ -182,7 +181,7 @@ function createFooter() {
   tel.appendChild(link1);
 
   const insta = document.createElement("li");
-  insta.textContent = "Instagram: "; //checar se precisa de &nbsp
+  insta.textContent = "Instagram:&nbsp";
   const link2 = document.createElement("a");
   link2.href = "https://www.instagram.com/panispaozinho/";
   link2.target = "_blank";
@@ -195,7 +194,7 @@ function createFooter() {
   insta.appendChild(link2);
 
   const email = document.createElement("li");
-  email.textContent = "E-mail: ";
+  email.textContent = "E-mail:&nbsp";
   const link3 = document.createElement("a");
   link3.href = "panispadaria@gmail.com";
   link3.textContent = "panispadaria@gmail.com";
@@ -218,7 +217,7 @@ function createFooter() {
   const titulo2 = document.createElement("h2");
   titulo2.textContent = "Horário de funcionamento:";
   const para2 = document.createElement("p");
-  para2.textContent = "Terça a sexta: 14h às 18h30";
+  para2.textContent = "Terça: 14h às 18h30";
   const para3 = document.createElement("p");
   para3.textContent = "Sábado: 9h às 12h30";
   const para4 = document.createElement("p");

@@ -49,7 +49,7 @@ function toggleMenu() {
   if (nav.classList.contains("navigation--visible")) {
     nav.classList.remove("navigation--visible");
     // header.style.maxHeight = "124px";
-    header.classList.remove("header-expanded");
+    header.classList.remove("header--expanded");
   } else {
     nav.classList.add("navigation--visible");
     // header.style.maxHeight = "none";
