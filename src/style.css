@@ -8,6 +8,7 @@
   --background-color: #fcfcf7;
   --logo-height: 80px;
   --text-color: #1b1619;
+  --line-color: #d9607e;
   scroll-padding: 124px;
   scroll-behavior: smooth;
 }
@@ -37,7 +38,7 @@ header {
   );
   background-size: 10px 100%;
   /* box-shadow: 0 8px #ee3664; */
-  box-shadow: 0 8px #da4d70;
+  box-shadow: 0 3px var(--line-color);
 }
 
 .header--expanded {
@@ -88,7 +89,7 @@ header {
 }
 
 #burger:hover {
-  color: var(--hover-color);
+  /* color: var(--hover-color); */
   /* background-color: rgba(0, 0, 0, 0.2); */
 }
 
