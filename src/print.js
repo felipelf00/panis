@@ -14,25 +14,33 @@ function createHeader() {
   const header = document.createElement("header");
   const headerRow = document.createElement("div");
   headerRow.classList.add("header-row");
+  const logoContainer = document.createElement("div");
+  logoContainer.classList.add("logo-container");
   const myLogo = new Image();
   myLogo.src = logo;
   myLogo.alt = "logo";
+  logoContainer.appendChild(myLogo);
 
   const contato = document.createElement("a");
   contato.classList.add("btn");
   contato.id = "btn-contato";
   contato.href = "#contato";
   contato.textContent = "Contato";
+  const contatoContainer = document.createElement("div");
+  contatoContainer.appendChild(contato);
+
   const burger = document.createElement("span");
   burger.classList.add("material-symbols-outlined");
   burger.id = "burger";
   burger.onclick = toggleMenu;
   burger.textContent = "menu";
-  headerRow.appendChild(myLogo);
-  headerRow.appendChild(contato);
+  headerRow.appendChild(logoContainer);
+  headerRow.appendChild(contatoContainer);
+  headerRow.appendChild(createNav());
+  headerRow.appendChild(burger);
   header.appendChild(headerRow);
-  header.appendChild(createNav());
-  header.appendChild(burger);
+
+  // header.appendChild(burger);
   return header;
 }
 
@@ -158,7 +166,10 @@ function createMain() {
 function createFooter() {
   const footer = document.createElement("section");
   footer.classList.add("contato");
-  // footer.id = "contato";
+
+  const footerContainer = document.createElement("div");
+  footerContainer.classList.add("footer-container");
+
   const titulo1 = document.createElement("h2");
   titulo1.textContent = "Contato";
   const para1 = document.createElement("p");
@@ -242,17 +253,18 @@ function createFooter() {
   mapa.loading = "lazy";
   mapa.referrerPolicy = "no-referrer-when-downgrade";
 
-  footer.appendChild(titulo1);
-  footer.appendChild(para1);
-  footer.appendChild(lista);
-  footer.appendChild(titulo2);
-  footer.appendChild(para2);
-  footer.appendChild(para3);
-  footer.appendChild(para4);
-  footer.appendChild(titulo3);
-  footer.appendChild(para5);
-  footer.appendChild(para6);
-  footer.appendChild(mapa);
+  footerContainer.appendChild(titulo1);
+  footerContainer.appendChild(para1);
+  footerContainer.appendChild(lista);
+  footerContainer.appendChild(titulo2);
+  footerContainer.appendChild(para2);
+  footerContainer.appendChild(para3);
+  footerContainer.appendChild(para4);
+  footerContainer.appendChild(titulo3);
+  footerContainer.appendChild(para5);
+  footerContainer.appendChild(para6);
+  footerContainer.appendChild(mapa);
+  footer.appendChild(footerContainer);
 
   return footer;
 }
