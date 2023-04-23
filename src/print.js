@@ -1,4 +1,4 @@
-import logo from "./imagens/logo2.png";
+import logo from "./imagens/logo3.png";
 import produtos from "./imagens/produtos.jpg";
 import paoInteiro from "./imagens/pão-inteiro.jpg";
 import focaccia from "./imagens/focaccia.jpg";
@@ -24,7 +24,7 @@ function createHeader() {
   const contato = document.createElement("a");
   contato.classList.add("btn");
   contato.id = "btn-contato";
-  contato.href = "#contato";
+  contato.href = "#footer";
   contato.textContent = "Contato";
   const contatoContainer = document.createElement("div");
   contatoContainer.appendChild(contato);
@@ -165,11 +165,14 @@ function createMain() {
 
 function createFooter() {
   const footer = document.createElement("section");
-  footer.classList.add("contato");
-
+  footer.classList.add("footer");
+  footer.id = "footer";
   const footerContainer = document.createElement("div");
   footerContainer.classList.add("footer-container");
 
+  // Contato
+  const contato = document.createElement("div");
+  contato.classList.add("contato");
   const titulo1 = document.createElement("h2");
   titulo1.textContent = "Contato";
   const para1 = document.createElement("p");
@@ -225,6 +228,13 @@ function createFooter() {
   lista.appendChild(email);
   lista.appendChild(delivery);
 
+  contato.appendChild(titulo1);
+  contato.appendChild(para1);
+  contato.appendChild(lista);
+
+  // Horário de funcionamento
+  const horario = document.createElement("div");
+  horario.classList.add("horario");
   const titulo2 = document.createElement("h2");
   titulo2.textContent = "Horário de funcionamento:";
   const para2 = document.createElement("p");
@@ -234,6 +244,15 @@ function createFooter() {
   const para4 = document.createElement("p");
   para4.textContent =
     "(observação: aos sábados pela manhã acontece uma feira livre na nossa rua, durante a qual não é possível passar pela rua de carro)";
+
+  horario.appendChild(titulo2);
+  horario.appendChild(para2);
+  horario.appendChild(para3);
+  horario.appendChild(para4);
+
+  // Como chegar
+  const comoChegar = document.createElement("div");
+  comoChegar.classList.add("como-chegar");
   const titulo3 = document.createElement("h2");
   titulo3.textContent = "Como chegar?";
   const para5 = document.createElement("p");
@@ -253,17 +272,15 @@ function createFooter() {
   mapa.loading = "lazy";
   mapa.referrerPolicy = "no-referrer-when-downgrade";
 
-  footerContainer.appendChild(titulo1);
-  footerContainer.appendChild(para1);
-  footerContainer.appendChild(lista);
-  footerContainer.appendChild(titulo2);
-  footerContainer.appendChild(para2);
-  footerContainer.appendChild(para3);
-  footerContainer.appendChild(para4);
-  footerContainer.appendChild(titulo3);
-  footerContainer.appendChild(para5);
-  footerContainer.appendChild(para6);
-  footerContainer.appendChild(mapa);
+  comoChegar.appendChild(titulo3);
+  comoChegar.appendChild(para5);
+  comoChegar.appendChild(para6);
+  comoChegar.appendChild(mapa);
+
+  // Appending
+  footerContainer.appendChild(contato);
+  footerContainer.appendChild(horario);
+  footerContainer.appendChild(comoChegar);
   footer.appendChild(footerContainer);
 
   return footer;
