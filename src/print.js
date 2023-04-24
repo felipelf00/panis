@@ -12,6 +12,8 @@ import { toggleMenu } from "./script.js";
 
 function createHeader() {
   const header = document.createElement("header");
+  const headerContainer = document.createElement("div");
+  headerContainer.classList.add("header-container");
   const headerRow = document.createElement("div");
   headerRow.classList.add("header-row");
   const logoContainer = document.createElement("div");
@@ -34,13 +36,20 @@ function createHeader() {
   burger.id = "burger";
   burger.onclick = toggleMenu;
   burger.textContent = "menu";
+
+  const shadow = document.createElement("div");
+  shadow.classList.add("shadow");
+  shadow.onclick = toggleMenu;
+
   headerRow.appendChild(logoContainer);
   headerRow.appendChild(contatoContainer);
   headerRow.appendChild(createNav());
   headerRow.appendChild(burger);
-  header.appendChild(headerRow);
 
-  // header.appendChild(burger);
+  headerContainer.appendChild(headerRow);
+
+  header.appendChild(headerContainer);
+  header.appendChild(shadow);
   return header;
 }
 
@@ -151,7 +160,7 @@ function createMain() {
 
   const para2 = document.createElement("p");
   para2.textContent =
-    "Além dos pães também fazemos os melhores cookies da cidade, focaccia e pães de queijo. Todos os nossos produtos são veganos.";
+    "Além dos pães também fazemos os melhores cookies da cidade, focaccia e pães de queijo.\nTodos os nossos produtos são veganos.";
 
   fotos.appendChild(carrossel);
   fotos.appendChild(para2);
@@ -214,19 +223,9 @@ function createFooter() {
   link3.textContent = "panispadaria@gmail.com";
   email.appendChild(link3);
 
-  const delivery = document.createElement("li");
-  const link4 = document.createElement("a");
-  link4.href = "https://panis-padaria-artesanal.goomer.app/";
-  link4.classList.add("btn");
-  link4.classList.add("alt");
-  link4.target = "_blank";
-  link4.textContent = "Delivery";
-  delivery.appendChild(link4);
-
   lista.appendChild(tel);
   lista.appendChild(insta);
   lista.appendChild(email);
-  lista.appendChild(delivery);
 
   contato.appendChild(titulo1);
   contato.appendChild(para1);
@@ -249,6 +248,14 @@ function createFooter() {
   horario.appendChild(para2);
   horario.appendChild(para3);
   horario.appendChild(para4);
+
+  // Botão Delivery
+  const delivery = document.createElement("a");
+  delivery.href = "https://panis-padaria-artesanal.goomer.app/";
+  delivery.classList.add("btn");
+  delivery.classList.add("delivery");
+  delivery.target = "_blank";
+  delivery.textContent = "Delivery";
 
   // Como chegar
   const comoChegar = document.createElement("div");
@@ -280,6 +287,7 @@ function createFooter() {
   // Appending
   footerContainer.appendChild(contato);
   footerContainer.appendChild(horario);
+  footerContainer.appendChild(delivery);
   footerContainer.appendChild(comoChegar);
   footer.appendChild(footerContainer);
 

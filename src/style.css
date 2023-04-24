@@ -23,20 +23,22 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   letter-spacing: 0.02em;
+  position: relative;
 }
 
 h2 {
-  text-decoration: underline;
+  font-size: 1.7rem;
+  margin-top: 0;
 }
 p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  white-space: pre-line;
 }
 
-header {
+.header-container {
   position: fixed;
   width: 100%;
-  /* max-height: 124px; */
-  z-index: 3;
+  z-index: 4;
   background-image: linear-gradient(
     to right,
     #f7f1f0,
@@ -45,22 +47,24 @@ header {
     #dcebd8
   );
   background-size: 10px 100%;
-  /* box-shadow: 0 8px #ee3664; */
   box-shadow: 0 3px var(--line-color);
 }
 
-.header--expanded {
+.shadow--visible {
+  background: rgba(0, 0, 0, 0.7);
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  z-index: 3;
+}
+
+/* .header--expanded {
   max-height: none;
-}
+} */
 
-.header-row {
-  /* display: flex;
-  align-items: center;
-  justify-content: space-between; */
-
-  /* padding: 10px; */
+/* .header-row {      OBSOLETO?
   padding-bottom: 0;
-}
+} */
 
 /* teste */
 .header-row {
@@ -94,6 +98,7 @@ header {
 #btn-contato {
   position: relative;
   top: 12px;
+  right: -12px;
   display: inline-block;
 }
 
@@ -137,6 +142,7 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  font-size: 1.1rem;
 }
 .navigation ul {
   width: 100%;
@@ -151,7 +157,7 @@ ul {
 a {
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.1rem;
   white-space: nowrap;
 }
 
@@ -296,26 +302,55 @@ h1 {
 }
 
 .footer {
-  margin: 20px auto;
+  margin: 20px auto 0 auto;
   width: 100%;
   overflow: hidden;
   background-color: var(--link-color);
   color: var(--background-color);
-  padding-bottom: 20px;
+  padding: 40px 0;
   box-shadow: 0 -3px var(--line-color);
 }
 
 .footer-container {
-  max-width: 800px;
+  max-width: 90vw;
   margin: auto;
+  display: grid;
+  /* grid-template-columns: 1fr 1fr; */
+  justify-items: center;
+  gap: 40px;
 }
+
+.contato,
+.horario {
+  /* width: min(30vw, 450px); */
+  max-width: 500px;
+  /* background-color: var(--background-color); */
+  color: var(--text-color);
+  border: 4px solid var(--line-color);
+  border-radius: 20px;
+  padding: 30px;
+
+  background-image: linear-gradient(
+    to right,
+    #f7f1f0,
+    #f7f1f0 5px,
+    #eaefe9 5px,
+    #eaefe9 /* #dcebd8 */
+  );
+  background-size: 10px 100%;
+}
+
+/* .como-chegar,
+.delivery {
+  grid-column: 1 / span 2;
+} */
 
 .footer p {
   padding: 0 10px;
 }
 
 .footer a {
-  color: var(--background-color);
+  color: var(--text-color);
   display: flex;
   align-items: center;
 }
@@ -337,26 +372,23 @@ h1 {
   padding-left: 10px;
 }
 
-.footer .alt {
+.delivery {
   background-color: var(--header-color);
   color: var(--link-color);
-}
-
-/* .footer .alt:hover {
-  background-color: var(--hover-color);
-  color: var(--background-color);
-} */
-
-.footer .btn {
   margin-top: 25px;
+  font-size: 1.5rem;
+  padding: 20px;
 }
 
-.contato {
-  padding-bottom: 40px;
+/* .delivery {
+  animation: blinker 1s linear infinite;
 }
-.horario {
-  padding-bottom: 20px;
-}
+
+@keyframes blinker {
+  50% {
+    background-color: var(--hover-color);
+  }
+} */
 
 #mapa {
   width: min(90%, 800px);
@@ -377,13 +409,13 @@ h1 {
   #burger {
     display: none;
   }
-  header {
-    max-height: none;
-  }
+  /* header {
+    max-height: none;  OBSOLETO?
+  } */
   .header-row {
     width: 1200px;
     margin: auto;
-    padding-bottom: 0px; /*obsoleto? */
+    /* padding-bottom: 0px; obsoleto? */
   }
   .main-container {
     width: 1200px;
@@ -403,12 +435,6 @@ h1 {
     grid-row: 1 / span 1;
     grid-column: 2 / span 1;
   }
-  /* .header-row img {
-    height: var(--logo-height);
-    transform: scale(1.5);
-    transform-origin: center; 
-    overflow: visible;
-  } */
 
   .header-row img {
     width: auto;
@@ -419,5 +445,17 @@ h1 {
   }
   #btn-contato {
     top: 0;
+  }
+  .footer-container {
+    max-width: min(1200px, 66vw);
+    /* margin: auto; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 40px;
+  }
+  .como-chegar,
+  .delivery {
+    grid-column: 1 / span 2;
   }
 }

@@ -45,15 +45,17 @@ function createSlider() {
 
 function toggleMenu() {
   const nav = document.querySelector(".navigation");
-  const header = document.querySelector("header");
+  const shadow = document.querySelector(".shadow");
   if (nav.classList.contains("navigation--visible")) {
     nav.classList.remove("navigation--visible");
+    shadow.classList.remove("shadow--visible");
     // header.style.maxHeight = "124px";
-    header.classList.remove("header--expanded");
+    // header.classList.remove("header--expanded");
   } else {
     nav.classList.add("navigation--visible");
+    shadow.classList.add("shadow--visible");
     // header.style.maxHeight = "none";
-    header.classList.add("header--expanded");
+    // header.classList.add("header--expanded");
   }
 }
 
