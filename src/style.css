@@ -417,7 +417,7 @@ h1 {
     margin: auto;
     /* padding-bottom: 0px; obsoleto? */
   }
-  .main-container {
+  #main-container {
     width: 1200px;
     margin: auto;
   }

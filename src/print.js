@@ -81,7 +81,7 @@ function createNav() {
 
 function createMain() {
   const container = document.createElement("div");
-  container.className = "main-container";
+  container.id = "main-container";
 
   //Imagem principal
   const mainImageContainer = document.createElement("div");
@@ -294,7 +294,16 @@ function createFooter() {
   return footer;
 }
 
-export default function load() {
+function createAbout() {
+  clearMain();
+  const texto = document.createElement("h1");
+  texto.textContent = "Blablablablabla";
+
+  const mainContainer = document.getElementById("main-container");
+  mainContainer.appendChild(texto);
+}
+
+function load() {
   const container = document.getElementById("body-container");
 
   container.appendChild(createHeader());
@@ -302,8 +311,11 @@ export default function load() {
   container.appendChild(createFooter());
 }
 
-// export default function loadMain() {
-//   const main = document.getElementById("main");
+function clearMain() {
+  const mainContainer = document.getElementById("main-container");
+  mainContainer.innerHTML = "";
+}
 
-//   main.appendChild(createMain());
-// }
+export { load };
+export { clearMain };
+export { createAbout };
