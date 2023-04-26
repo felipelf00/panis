@@ -3,4 +3,5 @@ import { myInterval, createSlider, toggleMenu } from "./script.js";
 import "./style.css";
 
 load();
-createSlider();
+// createSlider();
+// createAbout();

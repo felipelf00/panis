@@ -6,6 +6,11 @@ let myInterval = setInterval(() => {
 // myInterval;
 
 function createSlider() {
+  // let myInterval = setInterval(() => {
+  //   const autoNext = document.querySelector('[data-carrossel-btn="next"]');
+  //   autoNext.click();
+  // }, 3000);
+
   const buttons = document.querySelectorAll("[data-carrossel-btn]");
 
   buttons.forEach((button) => {
@@ -29,19 +34,15 @@ function createSlider() {
       delete activeSlide.dataset.ativo;
     });
   });
+
+  // window.addEventListener("onunload", () => {
+  //   clearInterval(myInterval);
+  // });
+
+  // return myInterval;
 }
 
-// function toggleMenu() {
-//   const nav = document.querySelector(".navigation");
-//   const header = document.querySelector("header");
-//   if (getComputedStyle(nav).display === "none") {
-//     nav.style.display = "block";
-//     header.style.maxHeight = "none";
-//   } else {
-//     nav.style.display = "none";
-//     header.style.maxHeight = "124px";
-//   }
-// }
+// let myInterval = createSlider();
 
 function toggleMenu() {
   const nav = document.querySelector(".navigation");
@@ -49,14 +50,11 @@ function toggleMenu() {
   if (nav.classList.contains("navigation--visible")) {
     nav.classList.remove("navigation--visible");
     shadow.classList.remove("shadow--visible");
-    // header.style.maxHeight = "124px";
-    // header.classList.remove("header--expanded");
   } else {
     nav.classList.add("navigation--visible");
     shadow.classList.add("shadow--visible");
-    // header.style.maxHeight = "none";
-    // header.classList.add("header--expanded");
   }
 }
 
+// export { createSlider, toggleMenu };
 export { myInterval, createSlider, toggleMenu };

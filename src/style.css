@@ -6,7 +6,6 @@
   --hover-color: #6d826c;
   /* --background-color: #F7FCF8; */
   --background-color: #fcfcf7;
-  --logo-height: 70px;
   --text-color: #1b1619;
   --line-color: #d9607e;
   --line-color-transparent: #d9607e15;
@@ -179,6 +178,10 @@ a {
   transform: translateY(-2px);
 }
 
+#main-container {
+  padding-top: 97px;
+}
+
 .main-image {
   position: relative;
   display: flex;
@@ -188,7 +191,6 @@ a {
   /* margin: 0 auto 20px auto; */
   margin: auto;
   z-index: -1;
-  padding-top: calc(3px + var(--logo-height));
 }
 
 .main-image img {
@@ -420,6 +422,7 @@ h1 {
   #main-container {
     width: 1200px;
     margin: auto;
+    padding-top: 73px;
   }
   #mapa {
     height: 450px;

@@ -8,7 +8,7 @@ import paoChoco from "./imagens/pão-choco.jpg";
 import modelados from "./imagens/modelados.jpg";
 import zapIcon from "./imagens/icons8-whatsapp-48.svg";
 import instaIcon from "./imagens/instagram-48.svg";
-import { toggleMenu } from "./script.js";
+import { toggleMenu, createSlider, myInterval } from "./script.js";
 
 function createHeader() {
   const header = document.createElement("header");
@@ -60,16 +60,24 @@ function createNav() {
 
   const principal = document.createElement("li");
   principal.classList.add("navlink");
-
   principal.textContent = "Página Principal";
+  principal.id = "principal";
+  principal.addEventListener("click", () => {
+    createMain();
+  });
 
   const produtos = document.createElement("li");
   produtos.classList.add("navlink");
   produtos.textContent = "Produtos";
+  produtos.id = "produtos";
 
   const sobre = document.createElement("li");
   sobre.classList.add("navlink");
   sobre.textContent = "Sobre nós";
+  sobre.id = "sobre";
+  sobre.addEventListener("click", () => {
+    createAbout();
+  });
 
   lista.appendChild(principal);
   lista.appendChild(produtos);
@@ -80,8 +88,9 @@ function createNav() {
 }
 
 function createMain() {
-  const container = document.createElement("div");
-  container.id = "main-container";
+  clearMain();
+
+  const container = document.getElementById("main-container");
 
   //Imagem principal
   const mainImageContainer = document.createElement("div");
@@ -168,6 +177,8 @@ function createMain() {
   container.appendChild(mainImageContainer);
   container.appendChild(bemVindo);
   container.appendChild(fotos);
+
+  createSlider();
 
   return container;
 }
@@ -296,17 +307,22 @@ function createFooter() {
 
 function createAbout() {
   clearMain();
-  const texto = document.createElement("h1");
-  texto.textContent = "Blablablablabla";
+
+  const titulo = document.createElement("h1");
+  titulo.textContent = "Quem é a Panis?";
 
   const mainContainer = document.getElementById("main-container");
-  mainContainer.appendChild(texto);
+  mainContainer.appendChild(titulo);
 }
 
 function load() {
   const container = document.getElementById("body-container");
 
+  const bodyContainer = document.createElement("div");
+  bodyContainer.id = "main-container";
+
   container.appendChild(createHeader());
+  container.appendChild(bodyContainer);
   container.appendChild(createMain());
   container.appendChild(createFooter());
 }
@@ -314,6 +330,9 @@ function load() {
 function clearMain() {
   const mainContainer = document.getElementById("main-container");
   mainContainer.innerHTML = "";
+
+  console.log(myInterval);
+  clearInterval(myInterval);
 }
 
 export { load };
