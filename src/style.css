@@ -57,15 +57,6 @@ p {
   z-index: 3;
 }
 
-/* .header--expanded {
-  max-height: none;
-} */
-
-/* .header-row {      OBSOLETO?
-  padding-bottom: 0;
-} */
-
-/* teste */
 .header-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -86,9 +77,8 @@ p {
 .logo-container {
   height: 70px;
 }
-.header-row img {
-  /* height: 70px; */
 
+.header-row img {
   height: 100px;
   position: relative;
   left: -4px;
@@ -433,6 +423,7 @@ h1 {
   /* teste */
   .header-row {
     grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: 202px auto 202px;
   }
   .navigation {
     grid-row: 1 / span 1;
@@ -440,11 +431,16 @@ h1 {
   }
 
   .header-row img {
+    width: 295px;
+    height: 166px;
     width: auto;
     object-fit: none;
     overflow: visible;
-    top: 25px;
-    left: -40px;
+    top: -8px;
+    /* left: -40px; */
+    left: max(-20px, calc(50vw - 700px));
+
+    position: absolute;
   }
   #btn-contato {
     top: 0;
