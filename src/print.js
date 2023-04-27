@@ -8,7 +8,8 @@ import paoChoco from "./imagens/pão-choco.jpg";
 import modelados from "./imagens/modelados.jpg";
 import zapIcon from "./imagens/icons8-whatsapp-48.svg";
 import instaIcon from "./imagens/instagram-48.svg";
-import { toggleMenu, createSlider, myInterval } from "./script.js";
+import construcao from "./imagens/construcao.jpeg";
+// import { toggleMenu, createSlider, myInterval } from "./script.js";
 
 function createHeader() {
   const header = document.createElement("header");
@@ -70,6 +71,9 @@ function createNav() {
   produtos.classList.add("navlink");
   produtos.textContent = "Produtos";
   produtos.id = "produtos";
+  produtos.addEventListener("click", () => {
+    createProducts();
+  });
 
   const sobre = document.createElement("li");
   sobre.classList.add("navlink");
@@ -305,14 +309,56 @@ function createFooter() {
   return footer;
 }
 
-function createAbout() {
+function createProducts() {
   clearMain();
 
+  window.scrollTo({
+    top: 0,
+    behavior: "instant",
+  });
+
   const titulo = document.createElement("h1");
-  titulo.textContent = "Quem é a Panis?";
+  titulo.textContent = "Em construção";
+
+  const emConstrucao = document.createElement("p");
+  emConstrucao.textContent =
+    "Hoje em dia a Panis é uma padaria de um homem só. O sujeito que compra os ingredientes, mistura a massa, modela os pães, coloca pra fermentar, assa no outro dia, limpa tudo, atende no balcão, é o mesmo que faz o site da padaria. Ainda não consegui terminar o site. Então se você quer saber mais sobre a Panis e seus produtos, dê uma olhada no nosso instagram ou venha pessoalmente bater um papo enquanto o site não fica pronto!";
+
+  const imagem = new Image();
+  imagem.src = construcao;
+  imagem.alt = "Em construção";
+  imagem.id = "eumesmo";
 
   const mainContainer = document.getElementById("main-container");
   mainContainer.appendChild(titulo);
+  mainContainer.appendChild(emConstrucao);
+  mainContainer.appendChild(imagem);
+}
+
+function createAbout() {
+  clearMain();
+
+  window.scrollTo({
+    top: 0,
+    behavior: "instant",
+  });
+
+  const titulo = document.createElement("h1");
+  titulo.textContent = "Em construção";
+
+  const emConstrucao = document.createElement("p");
+  emConstrucao.textContent =
+    "Hoje em dia a Panis é uma padaria de um homem só. O sujeito que compra os ingredientes, mistura a massa, modela os pães, coloca pra fermentar, assa no outro dia, limpa tudo, atende no balcão, é o mesmo que faz o site da padaria. Ainda não consegui terminar o site. Então se você quer saber mais sobre a Panis e seus produtos, dê uma olhada no nosso instagram ou venha pessoalmente bater um papo enquanto o site não fica pronto!";
+
+  const imagem = new Image();
+  imagem.src = construcao;
+  imagem.alt = "Em construção";
+  imagem.id = "eumesmo";
+
+  const mainContainer = document.getElementById("main-container");
+  mainContainer.appendChild(titulo);
+  mainContainer.appendChild(emConstrucao);
+  mainContainer.appendChild(imagem);
 }
 
 function load() {
@@ -330,9 +376,52 @@ function load() {
 function clearMain() {
   const mainContainer = document.getElementById("main-container");
   mainContainer.innerHTML = "";
+  clearInterval(sliderInterval);
+}
 
-  console.log(myInterval);
-  clearInterval(myInterval);
+function toggleMenu() {
+  const nav = document.querySelector(".navigation");
+  const shadow = document.querySelector(".shadow");
+  if (nav.classList.contains("navigation--visible")) {
+    nav.classList.remove("navigation--visible");
+    shadow.classList.remove("shadow--visible");
+  } else {
+    nav.classList.add("navigation--visible");
+    shadow.classList.add("shadow--visible");
+  }
+}
+
+let sliderInterval;
+
+function createSlider() {
+  sliderInterval = setInterval(() => {
+    const autoNext = document.querySelector('[data-carrossel-btn="next"]');
+    autoNext.click();
+  }, 3000);
+
+  const buttons = document.querySelectorAll("[data-carrossel-btn]");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      clearInterval(sliderInterval);
+      sliderInterval = setInterval(() => {
+        const autoNext = document.querySelector('[data-carrossel-btn="next"]');
+        autoNext.click();
+      }, 3000);
+      sliderInterval;
+      const offset = button.dataset.carrosselBtn === "next" ? 1 : -1;
+      const slides = button
+        .closest("[data-carrossel]")
+        .querySelector("[data-slides]");
+      const activeSlide = slides.querySelector("[data-ativo]");
+      let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+      if (newIndex < 0) newIndex = slides.children.length - 1;
+      if (newIndex >= slides.children.length) newIndex = 0;
+
+      slides.children[newIndex].dataset.ativo = true;
+      delete activeSlide.dataset.ativo;
+    });
+  });
 }
 
 export { load };

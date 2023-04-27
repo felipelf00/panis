@@ -462,3 +462,8 @@ h1 {
     grid-column: 1 / span 2;
   }
 }
+
+#eumesmo {
+  width: 500px;
+  height: auto;
+}
