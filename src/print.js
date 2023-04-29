@@ -317,6 +317,9 @@ function createProducts() {
     behavior: "instant",
   });
 
+  const containerConstrucao = document.createElement("div");
+  containerConstrucao.classList.add("construcao");
+
   const titulo = document.createElement("h1");
   titulo.textContent = "Em construção";
 
@@ -330,9 +333,11 @@ function createProducts() {
   imagem.id = "eumesmo";
 
   const mainContainer = document.getElementById("main-container");
-  mainContainer.appendChild(titulo);
-  mainContainer.appendChild(emConstrucao);
-  mainContainer.appendChild(imagem);
+
+  containerConstrucao.appendChild(titulo);
+  containerConstrucao.appendChild(emConstrucao);
+  containerConstrucao.appendChild(imagem);
+  mainContainer.appendChild(containerConstrucao);
 }
 
 function createAbout() {
@@ -343,6 +348,9 @@ function createAbout() {
     behavior: "instant",
   });
 
+  const containerConstrucao = document.createElement("div");
+  containerConstrucao.classList.add("construcao");
+
   const titulo = document.createElement("h1");
   titulo.textContent = "Em construção";
 
@@ -356,9 +364,11 @@ function createAbout() {
   imagem.id = "eumesmo";
 
   const mainContainer = document.getElementById("main-container");
-  mainContainer.appendChild(titulo);
-  mainContainer.appendChild(emConstrucao);
-  mainContainer.appendChild(imagem);
+
+  containerConstrucao.appendChild(titulo);
+  containerConstrucao.appendChild(emConstrucao);
+  containerConstrucao.appendChild(imagem);
+  mainContainer.appendChild(containerConstrucao);
 }
 
 function load() {

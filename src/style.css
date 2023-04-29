@@ -459,7 +459,15 @@ h1 {
   }
 }
 
+.construcao {
+  width: min(90vw, 800px);
+  margin: auto;
+}
+
+.construcao p {
+  text-align: left;
+}
+
 #eumesmo {
-  width: 500px;
-  height: auto;
+  max-width: 100%;
 }
